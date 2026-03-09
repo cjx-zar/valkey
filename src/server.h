@@ -2105,6 +2105,7 @@ struct valkeyServer {
     char replid2[CONFIG_RUN_ID_SIZE + 1];       /* replid inherited from primary*/
     long long primary_repl_offset;              /* My current replication offset */
     long long second_replid_offset;             /* Accept offsets up to this for replid2. */
+    int redundant_var;
     _Atomic(long long) fsynced_reploff_pending; /* Largest replication offset to
                          * potentially have been fsynced, applied to
                            fsynced_reploff only when AOF state is AOF_ON
